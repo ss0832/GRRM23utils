@@ -67,7 +67,7 @@ linkjob_dist: dist
 
   expect linkjob_dist of output of interface.LinkJOB2list function
 
-
+Returns: None
 
   
 
