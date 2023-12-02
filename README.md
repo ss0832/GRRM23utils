@@ -12,9 +12,9 @@ https://afir.sci.hokudai.ac.jp/documents/manual/196
 - numpy
 
 ## Utils
-interface.py : For option (**AddSubExPot**) of GRRM23 
+interface.py : For option (**SubAddExPot**) of GRRM23 
 
-**AddSubExPot**=(absolute path of your program file to run between QM calculation and processing by GRRM program)
+**SubAddExPot**=(absolute path of your program file to run between QM calculation and processing by GRRM program)
 
 You can execute your program between processing of QM calculation software and processing of GRRM. 
 
