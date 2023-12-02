@@ -324,8 +324,9 @@ def list2LinkJOB(file, linkjob_dist):
 if __name__ == "__main__":
     
     file = sys.argv[1]
-    abs_file = os.path.abspath(file)
-    linkjob_dist = LinkJOB2list(abs_file)
+    
+    linkjob_dist = LinkJOB2list(file)
+
     print("gradient_list")
     print(linkjob_dist["gradient_list"])
     #print("hessian_matrix")
@@ -344,5 +345,5 @@ if __name__ == "__main__":
     print(linkjob_dist["information"])
     print("spin_multiplicity")
     print(linkjob_dist["spin_multiplicity"])
-    list2LinkJOB(abs_file, linkjob_dist)
+    list2LinkJOB(file, linkjob_dist)
     
