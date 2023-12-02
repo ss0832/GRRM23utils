@@ -12,10 +12,12 @@ interface.py : For option of GRRM23 (**AddSubExPot**=(absolute path of your prog
 - interface.LinkJOB2list(file_name)
 
 Read file_name (expect xxx_LinkJOB.rrm) and extract information of results of calculation (for adding user defined bias potential etc.)
+
 This function saved xxx_LinkJOB.rrm file as xxx_LinkJOB.rrm_old.
 
 file_name: str
-- expect xxx_LinkJOB.rrm
+
+expect xxx_LinkJOB.rrm
 
 Returns: dist - results of calculation 
 
@@ -32,13 +34,16 @@ Returns: dist - results of calculation
 - interface.list2LinkJOB(file_name, linkjob_dist)
 
 Save contents of linkjob_dist (valiable) to xxx_LinkJOB.rrm_new.
+
 This function overwrites xxx_LinkJOB.rrm file as contents of xxx_LinkJOB.rrm_new.
 
 file_name: str
-- expect xxx_LinkJOB.rrm
+
+  expect xxx_LinkJOB.rrm
 
 linkjob_dist: dist
-- expect linkjob_dist of output of interface.LinkJOB2list function
+
+  expect linkjob_dist of output of interface.LinkJOB2list function
 
 
 
