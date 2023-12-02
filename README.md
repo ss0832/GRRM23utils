@@ -16,7 +16,7 @@ interface.py : For option (**AddSubExPot**) of GRRM23
 
 **AddSubExPot**=(absolute path of your program file to run between QM calculation and processing by GRRM program)
 
-You can read your program between processing of QM calculation software and processing of GRRM. 
+You can execute your program between processing of QM calculation software and processing of GRRM. 
 
 
 ### functions
