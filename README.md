@@ -1,6 +1,13 @@
 # GRRM23utils
 For using utilities to easily implement user-developed tools (GRRM23)
 
+URLs:
+
+https://global.hpc.co.jp/products/grrm23/
+
+https://afir.sci.hokudai.ac.jp/documents/manual/196
+
+
 ## Required modules
 - numpy
 
