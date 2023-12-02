@@ -20,8 +20,8 @@ You can read your program between processing of QM calculation software and proc
 
 
 ### functions
--_ **interface.LinkJOB2list(file_name)**
-_
+_ **interface.LinkJOB2list(file_name)**_
+
 Read file_name (expect xxx_LinkJOB.rrm) and extract information of results of calculation (for adding user defined bias potential etc.)
 
 This function saved xxx_LinkJOB.rrm file as xxx_LinkJOB.rrm_old.
@@ -53,8 +53,8 @@ contents of dist
  - spin_multiplicity: spin multiplicity (S**2) (float) 
 
 
-- **_interface.list2LinkJOB(file_name, linkjob_dist)_
-**
+**_interface.list2LinkJOB(file_name, linkjob_dist)_**
+
 Save contents of linkjob_dist (valiable) to xxx_LinkJOB.rrm_new.
 
 This function overwrites xxx_LinkJOB.rrm file as contents of xxx_LinkJOB.rrm_new.
