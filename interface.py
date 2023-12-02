@@ -315,7 +315,7 @@ def list2LinkJOB(file, linkjob_dist):
                 raise "error"
         
    
-    shutil.copy(file+"_new ", file)
+    shutil.copy(file+"_new", file)
     
     return
     
@@ -323,7 +323,7 @@ def list2LinkJOB(file, linkjob_dist):
 
 if __name__ == "__main__":
     
-    file = sys.argv[1]
+    file = sys.argv[1]#GRRM sends xxx_LinkJOB.rrm (absolute path)
     
     linkjob_dist = LinkJOB2list(file)
 
