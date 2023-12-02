@@ -20,8 +20,8 @@ You can read your program between processing of QM calculation software and proc
 
 
 ### functions
-- interface.LinkJOB2list(file_name)
-
+-_ **interface.LinkJOB2list(file_name)**
+_
 Read file_name (expect xxx_LinkJOB.rrm) and extract information of results of calculation (for adding user defined bias potential etc.)
 
 This function saved xxx_LinkJOB.rrm file as xxx_LinkJOB.rrm_old.
@@ -32,18 +32,29 @@ expect xxx_LinkJOB.rrm
 
 Returns: dist - results of calculation 
 
-(energy: electronic energy (float) 
- element_list: element list of job file (iterable, str)  
- current_coord:  coordination of atoms (3xN, ndarray, float64)  
- dipole_vector: dipole vector(x y z(1x3), ndarray, float64) 
- gradient_list: gradients of atoms (3xN, ndarray, float64)  
- hessian_matrix: hessian matric of atoms (3Nx3N, ndarray, float64)
- dipole_derivative_tensor_matrix: tensor matrix of first derivative dipole moment (Nx3x3, ndarray, float64)
- pola_tensor_matrix: matrix of polarization (3x3, ndarray, float64)
- spin_multiplicity: spin multiplicity (S**2) (float)) 
+contents of dist
 
-- interface.list2LinkJOB(file_name, linkjob_dist)
+ - energy: electronic energy (float) 
 
+ - element_list: element list of job file (iterable, str)  
+ 
+ - current_coord:  coordination of atoms (3xN, ndarray, float64)  
+ 
+ - dipole_vector: dipole vector(x y z(1x3), ndarray, float64) 
+ 
+ - gradient_list: gradients of atoms (3xN, ndarray, float64)  
+ 
+ - hessian_matrix: hessian matric of atoms (3Nx3N, ndarray, float64)
+ 
+ - dipole_derivative_tensor_matrix: tensor matrix of first derivative dipole moment (Nx3x3, ndarray, float64)
+ 
+ - pola_tensor_matrix: matrix of polarization (3x3, ndarray, float64)
+ 
+ - spin_multiplicity: spin multiplicity (S**2) (float) 
+
+
+- **_interface.list2LinkJOB(file_name, linkjob_dist)_
+**
 Save contents of linkjob_dist (valiable) to xxx_LinkJOB.rrm_new.
 
 This function overwrites xxx_LinkJOB.rrm file as contents of xxx_LinkJOB.rrm_new.
