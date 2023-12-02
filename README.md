@@ -20,7 +20,7 @@ You can read your program between processing of QM calculation software and proc
 
 
 ### functions
-_ **interface.LinkJOB2list(file_name)**_
+**_interface.LinkJOB2list(file_name)_**
 
 Read file_name (expect xxx_LinkJOB.rrm) and extract information of results of calculation (for adding user defined bias potential etc.)
 
