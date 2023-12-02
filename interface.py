@@ -269,8 +269,10 @@ def list2LinkJOB(file, linkjob_dist):
             for w in word:
                 f.write(" {:>17.12f}".format(w)+"\n")
         
-        f.write("DIPOLE =    {0:>17.12f}    {1:>17.12f}    {2:>17.12f}".format(*linkjob_dist["dipole_vector"].tolist())+"\n")
-        
+        if linkjob_dist["dipole_vector"] != "None":
+            f.write("DIPOLE =    {0:>17.12f}    {1:>17.12f}    {2:>17.12f}".format(*linkjob_dist["dipole_vector"].tolist())+"\n")
+        else:
+            pass
         
         
         f.write("HESSIAN\n")
@@ -295,25 +297,30 @@ def list2LinkJOB(file, linkjob_dist):
             column_count += 5
             row_count += 5
         
-        f.write("DIPOLE DERIVATIVES\n")
-        for word in linkjob_dist["dipole_derivative_tensor_matrix"]:
+        if linkjob_dist["dipole_derivative_tensor_matrix"] != "None":
+            f.write("DIPOLE DERIVATIVES\n")
+            for word in linkjob_dist["dipole_derivative_tensor_matrix"]:
+                
+                for w in word:
+                   
+                    f.write("  {0:>17.12f}    {1:>17.12f}    {2:>17.12f}".format(*w.tolist())+"\n")
+        else:
+            pass
             
-            for w in word:
-               
-                f.write("  {0:>17.12f}    {1:>17.12f}    {2:>17.12f}".format(*w.tolist())+"\n")
-        
-        f.write("POLARIZABILITY\n")
-        for num, word in enumerate(linkjob_dist["pola_tensor_matrix"]):
-            if num == 0:
-                f.write("  {0:>17.12f}   ".format(word.tolist()[0])+"\n")
-            elif num == 1:
-                f.write("  {0:>17.12f}    {1:>17.12f}  ".format(*word.tolist()[:2])+"\n")
-                       
-            elif num == 2:
-                f.write("  {0:>17.12f}    {1:>17.12f}    {2:>17.12f}".format(*word.tolist())+"\n")
-            else:
-                raise "error"
-        
+        if linkjob_dist["pola_tensor_matrix"] != "None":
+            f.write("POLARIZABILITY\n")
+            for num, word in enumerate(linkjob_dist["pola_tensor_matrix"]):
+                if num == 0:
+                    f.write("  {0:>17.12f}   ".format(word.tolist()[0])+"\n")
+                elif num == 1:
+                    f.write("  {0:>17.12f}    {1:>17.12f}  ".format(*word.tolist()[:2])+"\n")
+                           
+                elif num == 2:
+                    f.write("  {0:>17.12f}    {1:>17.12f}    {2:>17.12f}".format(*word.tolist())+"\n")
+                else:
+                    raise "error"
+        else:
+            pass
    
     shutil.copy(file+"_new", file)
     
