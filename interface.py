@@ -1,6 +1,7 @@
 import numpy as np
 import sys
 import shutil
+import os
 
 
 def extract_coord(word_list):#ang.
@@ -234,9 +235,9 @@ def LinkJOB2list(file):
     linkjob_dist["pola_tensor_matrix"] = np.array(pola_tensor_matrix, dtype="float64")
     linkjob_dist["spin_multiplicity"] = float(spin_multiplicity)
     
-
+    
     shutil.copy(file, file+"_old")
-
+    
         
     return linkjob_dist
 
@@ -269,6 +270,8 @@ def list2LinkJOB(file, linkjob_dist):
                 f.write(" {:>17.12f}".format(w)+"\n")
         
         f.write("DIPOLE =    {0:>17.12f}    {1:>17.12f}    {2:>17.12f}".format(*linkjob_dist["dipole_vector"].tolist())+"\n")
+        
+        
         
         f.write("HESSIAN\n")
         
@@ -311,12 +314,18 @@ def list2LinkJOB(file, linkjob_dist):
             else:
                 raise "error"
         
+   
+    shutil.copy(file+"_new ", file)
     
-    shutil.copy(file+"_new", file)
     return
+    
+
 
 if __name__ == "__main__":
-    linkjob_dist = LinkJOB2list(sys.argv[1])
+    
+    file = sys.argv[1]
+    abs_file = os.path.abspath(file)
+    linkjob_dist = LinkJOB2list(abs_file)
     print("gradient_list")
     print(linkjob_dist["gradient_list"])
     #print("hessian_matrix")
@@ -335,5 +344,5 @@ if __name__ == "__main__":
     print(linkjob_dist["information"])
     print("spin_multiplicity")
     print(linkjob_dist["spin_multiplicity"])
-    #list2LinkJOB(sys.argv[1], linkjob_dist)
+    list2LinkJOB(abs_file, linkjob_dist)
     
