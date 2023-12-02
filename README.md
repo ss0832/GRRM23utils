@@ -18,6 +18,7 @@ file_name: str
 - expect xxx_LinkJOB.rrm
 
 Returns: dist - results of calculation 
+
 (energy: electronic energy (float) 
  element_list: element list of job file (iterable, str)  
  current_coord:  coordination of atoms (3xN, ndarray, float64)  
