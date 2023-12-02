@@ -70,4 +70,8 @@ linkjob_dist: dist
 Returns: None
 
   
+## License
+
+The license of This program is MIT license.
+
 
