@@ -328,12 +328,9 @@ def list2LinkJOB(file, linkjob_dist):
     
 
 
-if __name__ == "__main__":
-    
+if __name__ == "__main__":#samewhat GRRM (SubAddExPot) doesnt execute program if you type "if __name__ == "__main__":" in your program.
     file = sys.argv[1]#GRRM sends xxx_LinkJOB.rrm (absolute path)
-    
     linkjob_dist = LinkJOB2list(file)
-
     print("gradient_list")
     print(linkjob_dist["gradient_list"])
     #print("hessian_matrix")
