@@ -30,9 +30,9 @@ file_name: str
 
 expect xxx_LinkJOB.rrm
 
-Returns: dist - results of calculation 
+Returns: dict - results of calculation 
 
-contents of dist
+contents of dict
 
  - energy: electronic energy (float) 
 
@@ -53,7 +53,7 @@ contents of dist
  - spin_multiplicity: spin multiplicity (S**2) (float) 
 
 
-**_interface.list2LinkJOB(file_name, linkjob_dist)_**
+**_interface.list2LinkJOB(file_name, linkjob_dict)_**
 
 Save contents of linkjob_dist (valiable) to xxx_LinkJOB.rrm_new.
 
@@ -63,7 +63,7 @@ file_name: str
 
   expect xxx_LinkJOB.rrm
 
-linkjob_dist: dist
+linkjob_dict: dict
 
   expect linkjob_dist of output of interface.LinkJOB2list function
 
