@@ -32,7 +32,7 @@ expect xxx_LinkJOB.rrm
 
 Returns: dict - results of calculation 
 
-contents of dict
+contents of dict (N atoms)
 
  - energy: electronic energy (float) 
 
